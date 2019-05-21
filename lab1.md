@@ -75,7 +75,7 @@ make handin将您的API密钥存储在myapi.key中。如果您需要更改API密
 ```
 练习1. 熟悉6.828参考页面上提供的汇编语言材料 。您现在不必阅读它们，但在阅读和编写x86程序集时，您几乎肯定会想要参考这些材料。
 ```
-<table><tr><td bgcolor=orange>背景色是：orange</td></tr></table>
+<table><tr><td bgcolor="orange">背景色是：orange</td></tr></table>
 
 
 我们建议您阅读Brennan的内联汇编指南中的 “语法”部分 。它给出了我们将在JOS中使用GNU汇编程序的AT＆T汇编语法的一个很好的（并且非常简短）描述。
