@@ -118,30 +118,20 @@ Git允许您查看您对代码的改动。例如，如果您已完成其中一�
 
 将两个终端窗口和cd两个shell 打开到您的lab目录中。在一个中，输入make qemu-gdb（或make qemu-nox-gdb）。这将启动QEMU，但QEMU在处理器执行第一条指令之前停止，并等待来自GDB的调试连接。在第二个终端中，从运行make，run 的同一目录开始make gdb。你应该看到这样的东西，
 
-雅典娜％ make gdb
-GNU gdb（GDB）6.8-debian
-版权所有（C）2008 Free Software Foundation，Inc。
-许可证GPLv3 +：GNU GPL版本3或更高版本<http://gnu.org/licenses/gpl.html>
-这是免费软件：您可以自由更改并重新分发它。
-在法律允许的范围内，不提供任何担保。输入“显示复制”
-并详细说明“保修”。
-此GDB配置为“i486-linux-gnu”。
-+ target remote localhost：26000
-目标架构假设为i8086
-[f000：fff0] 0xffff0：ljmp $ 0xf000，$ 0xe05b
-0x0000fff0在？（）
-+ symbol-file obj / kern / kernel
-（GDB） 
+![](../pic/lab1-10.png)
+
 我们提供了一个.gdbinit文件，用于设置GDB以调试早期启动期间使用的16位代码，并将其指向附加到侦听QEMU。（如果它不工作，你可能需要添加一个插件自动加载安全路径在 .gdbinit你的home目录说服GDB处理 .gdbinit我们提供的。 GDB会告诉你，如果你要做这个。）
 
 以下行：
 
-[f000：fff0] 0xffff0：ljmp $ 0xf000，$ 0xe05b
+`[f000：fff0] 0xffff0：ljmp $ 0xf000，$ 0xe05b`
+
 是GDB对要执行的第一条指令的反汇编。从这个输出中你可以得出以下结论：
 
-IBM PC开始在物理地址0x000ffff0处执行，该地址位于为ROM BIOS保留的64KB区域的最顶端。
-PC开始执行CS = 0xf000和IP = 0xfff0。
-要执行的第一条指令是jmp指令，它跳转到分段地址 CS = 0xf000和IP = 0xe05b。
++ IBM PC开始在物理地址0x000ffff0处执行，该地址位于为ROM BIOS保留的64KB区域的最顶端。
++ PC开始执行CS = 0xf000和IP = 0xfff0。
++ 要执行的第一条指令是jmp指令，它跳转到分段地址 CS = 0xf000和IP = 0xe05b。
+
 为什么QEMU会这样开始？这就是英特尔如何设计IBM在其原始PC中使用的8088处理器。由于PC中的BIOS与物理地址范围0x000f0000-0x000fffff“硬连线”，因此该设计可确保BIOS在上电或任何系统重启后始终首先控制机器 - 这对于电源而言至关重要 - 那里是没有其他的软件在机器的RAM的任何地方，该处理器可以执行。QEMU仿真器带有自己的BIOS，它放置在处理器的模拟物理地址空间中的这个位置。在处理器复位时，（模拟）处理器进入实模式并将CS设置为0xf000，将IP设置为0xfff0，以便从该（CS：IP）段地址开始执行。分段地址0xf000如何：
 
 要回答这个问题，我们需要了解一下实模式寻址。在实模式（PC启动的模式）中，地址转换根据以下公式工作： 物理地址 = 16 * 段 + 偏移。因此，当PC将CS设置为0xf000且IP设置为0xfff0时，引用的物理地址为：
