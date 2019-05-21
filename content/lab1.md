@@ -84,28 +84,12 @@ Git允许您查看您对代码的改动。例如，如果您已完成其中一�
 
 现在您已准备好运行QEMU，将上面创建的文件obj / kern / kernel.img作为模拟PC“虚拟硬盘”的内容提供。此硬盘映像包含我们的引导加载程序（obj / boot / boot）和我们的内核（obj / kernel）。
 
-雅典娜％ make qemu
-要么
-雅典娜％ make qemu-nox
+![](../pic/lab1-06.png)
+
 这将执行QEMU，其中包含将硬盘和直接串行端口输出设置到终端所需的选项。某些文本应出现在QEMU窗口中：
 
-从硬盘启动...
-6828十进制是XXX八进制！
-进入test_backtrace 5
-进入test_backtrace 4
-进入test_backtrace 3
-进入test_backtrace 2
-进入test_backtrace 1
-输入test_backtrace 0
-离开test_backtrace 0
-离开test_backtrace 1
-离开test_backtrace 2
-离开test_backtrace 3
-离开test_backtrace 4
-离开test_backtrace 5
-欢迎来到JOS内核监视器！
-输入“help”作为命令列表。
-K>
+![](../pic/lab1-07.png)
+
 “ 从硬盘启动...... ” 之后的所有内容都是由我们的骨架JOS内核打印出来的; 的K>是由小的印刷提示监视器，或交互式控制程序，我们已经包含在内核中。如果你用过 make qemu，内核打印的这些行将出现在运行QEMU的常规shell窗口和QEMU显示窗口中。这是因为为了测试和实验室评分的目的，我们设置了JOS内核，不仅将其控制台输出写入虚拟VGA显示器（如QEMU窗口中所示），还将其写入模拟PC的虚拟串行端口，QEMU位于将输出转换为自己的标准输出。同样，JOS内核将从键盘和串行端口获取输入，因此您可以在VGA显示窗口或运行QEMU的终端中输入命令。或者，您可以通过运行使用不带虚拟VGA的串行控制台make qemu-nox。如果您通过SSH连接到Athena拨号，这可能很方便。要退出qemu，请键入Ctrl+a x。
 
 您只能向内核监视器，help和kerninfo提供两个命令 。
