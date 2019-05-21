@@ -11,7 +11,7 @@
 
 课程Git存储库的URL是 https://pdos.csail.mit.edu/6.828/2018/jos.git。要在Athena帐户中安装文件，您需要通过运行以下命令来克隆课程存储库。你必须使用x86雅典娜机器; 也就是说，uname -a 应该提到i386 GNU / Linux或i686 GNU / Linux或 x86_64 GNU / Linux。您可以使用ssh -X athena.dialup.mit.edu登录公共Athena主机。
 
-![figure1-1](../pic/lab1-01.png)
+![](../pic/lab1-01.png)
 
 Git允许您跟踪您对代码所做的更改。例如，如果您已完成其中一个练习，并想要检查您的进度，则可以通过运行以下命令提交更改：
 
