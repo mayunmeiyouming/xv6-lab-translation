@@ -13,11 +13,11 @@
 
 ![](../pic/lab1-01.png)
 
-你可以使用`git diff`命令来查看你对代码所做的更改。例如，如果您已完成其中一个练习，并想要检查您的进度，则可以通过运行以下命令提交更改：
+Git允许您查看您对代码的改动。例如，如果您已完成其中一个练习，并想要检查您的进度，则可以通过运行以下命令提交更改：
 
 ![](../pic/lab1-02.png) 
 
-您可以使用该git diff命令跟踪更改。运行git diff将显示自上次提交后代码的更改，git diff origin/lab1并将显示相对于为本实验提供的初始代码的更改。这里，origin / lab1是git分支的名称，其中包含从我们的服务器下载的用于此分配的初始代码。
+您可以使用`git diff`命令跟踪更改。运行git diff将显示自上次提交后代码的更改，git diff origin/lab1并将显示相对于为本实验提供的初始代码的更改。这里，origin / lab1是git分支的名称，其中包含从我们的服务器下载的用于此分配的初始代码。
 
 我们在Athena为您设置了适当的编译器和模拟器。要使用它们，请运行add -f 6.828。每次登录时都必须运行此命令（或将其添加到 〜/ .environment文件中）。如果在编译或运行qemu时遇到模糊错误，请仔细检查是否添加了课程锁定器。
 
@@ -29,18 +29,10 @@
 
 实验室代码附带GNU Make规则，使提交更容易。将最终更改提交到实验室后，键入make handin以提交实验室。
 
-雅典娜％ git commit -am "ready to submit my lab"
-[lab1 c2e3c8b]准备提交我的实验室
- 更改了2个文件，18个插入（+），2个删除（ - ）
+![](../pic/lab1-03.png)
 
-雅典娜％ make handin
-git archive --prefix = lab1 / --format = tar HEAD | gzip> lab1-handin.tar.gz
-访问https://6828.scripts.mit.edu/2018/handin.py/获取自己的API密钥
-请输入您的API密钥：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-  ％总收到百分比％Xferd平均速度时间时间当前时间
-                                 Dload上载总左转速度
-100 50199 100 241 100 49958 414 85824  - ： - ： -   - ： - ： -   - ： - ： -  85986
-雅典娜％
+![](../pic/lab1-04.png)
+
 make handin将您的API密钥存储在myapi.key中。如果您需要更改API密钥，只需删除此文件并make handin 再次生成（myapi.key不得包含换行符）。
 如果使用make handin并且您有未经修改的更改或未跟踪的文件，您将看到类似于以下内容的输出：
 
