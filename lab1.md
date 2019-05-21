@@ -77,6 +77,7 @@ make handin将您的API密钥存储在myapi.key中。如果您需要更改API密
 ```
 <table><tr><td bgcolor="orange">背景色是：orange</td></tr></table>
 
+<font color="#dd0000">浅红色文字：</font>
 
 我们建议您阅读Brennan的内联汇编指南中的 “语法”部分 。它给出了我们将在JOS中使用GNU汇编程序的AT＆T汇编语法的一个很好的（并且非常简短）描述。
 
