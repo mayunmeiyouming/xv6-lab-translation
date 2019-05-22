@@ -393,4 +393,5 @@ debuginfo_eip通过插入调用来完成实现，stab_binsearch以查找地址�
 您可能会发现回溯中缺少某些功能。例如，您可能会看到呼叫monitor()而不是呼叫 runcmd()。这是因为编译器内联了一些函数调用。其他优化可能会导致您看到意外的行号。如果从 GNUMakefile中删除-O2，则回溯可能更有意义（但内核运行速度会更慢）。
 </td></tr></table>
 
-**这样就完成了实验室。**在实验室目录中，使用提交更改 git commit并键入make handin以提交代码。
+**这样就完成了实验室。**
+在实验室目录中，使用提交更改 git commit并键入make handin以提交代码。
