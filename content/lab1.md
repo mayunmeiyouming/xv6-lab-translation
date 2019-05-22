@@ -394,4 +394,4 @@ debuginfo_eip通过插入调用来完成实现，stab_binsearch以查找地址�
 </td></tr></table>
 
 **这样就完成了实验室。**
-在实验室目录中，使用提交更改 git commit并键入make handin以提交代码。
+在实验室目录中，使用提交更改`git commit`并键入make handin以提交代码。
