@@ -301,6 +301,7 @@ int x = 1，y = 3，z = 4;
 cprintf（“x％d，y％x，z％d \ n”，x，y，z）;
 在致电中cprintf()，到底有什么fmt意义？到什么ap点？
 名单（按执行顺序）每次调用 cons_putc，va_arg和vcprintf。对于cons_putc，也列出其论点。对于 va_arg，列出ap呼叫之前和之后的点。对于vcprintf名单的两个参数的值。
+
 4. 运行以下代码。
 
 ```
