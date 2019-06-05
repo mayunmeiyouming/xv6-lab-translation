@@ -25,7 +25,7 @@
 
 ### 交作业流程
 
-您将使用[这个网站](https://6828.scripts.mit.edu/2018/handin.py/)上交作业。您需要先从网站申请API密钥，然后才能上交任何作业或实验。
+您将使用[ 这个网站 ](https://6828.scripts.mit.edu/2018/handin.py/)上交作业。您需要先从网站申请API密钥，然后才能上交任何作业或实验。
 
 实验代码附带GNU Make规则，使提交更容易。完成实验后，输入`make handin`提交实验代码。
 
@@ -45,9 +45,9 @@ Untracked files will not be handed in. Continue？[Y / N]
 
 检查上述行并确保有跟踪实验解决方案所需的所有文件，即未列在以`??`为开头的行中。
 
-在这种情况下`make handin`不能正常工作，请尝试使用`curl`或`Git`命令解决了这个问题。或者你可以运行`make tarball`。这将为您创建一个tar文件，然后您可以通过我们的[Web网站](https://6828.scripts.mit.edu/2018/handin.py/)上传 。
+在这种情况下`make handin`不能正常工作，请尝试使用`curl`或`Git`命令解决了这个问题。或者你可以运行`make tarball`。这将为您创建一个tar文件，然后您可以通过我们的[ Web网站 ](https://6828.scripts.mit.edu/2018/handin.py/)上传 。
 
-您可以使用`make grade`来运行评分程序以测试您的解决方案。该[web interface](https://6828.scripts.mit.edu/2018/handin.py/)使用相同的分级方案来评定您的实验的档次。您应该查看评分程序的评分（定期运行的评分程序可能需要几分钟）并确保您收到了预期的等级。如果成绩不匹配，您的实验室提交可能有错误 - 检查评分程序的结果（resp-lab * .txt）以查看哪个特定测试有失败。
+您可以使用`make grade`来运行评分程序以测试您的解决方案。该[ web interface ](https://6828.scripts.mit.edu/2018/handin.py/)使用相同的分级方案来评定您的实验的档次。您应该查看评分程序的评分（定期运行的评分程序可能需要几分钟）并确保您收到了预期的等级。如果成绩不匹配，您的实验室提交可能有错误 - 检查评分程序的结果（resp-lab * .txt）以查看哪个特定测试有失败。
 
 对于实验1，您无需回答下面的任何问题。（尽管你们可以回答！并且这样将会有利于余下的实验。）
 
