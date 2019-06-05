@@ -67,7 +67,7 @@ Untracked files will not be handed in. Continue？[Y / N]
 我们建议您阅读[ Brennan's Guide to Inline Assembly ](http://www.delorie.com/djgpp/doc/brennan/brennan_att_inline_djgpp.html)中的 “The Syntax”部分 。它有很好的描述（并且非常简短）在JOS中的GNU汇编程序使用的AT＆T汇编语法。
 </td></tr></table>
 
-当然，x86汇编语言编程的权威参考是英特尔的指令集架构参考，您可以在6.828参考页面上找到 两种版本：旧版[  80386 Programmer's Reference Manual ](https://pdos.csail.mit.edu/6.828/2018/readings/i386/toc.htm)，它比更多更简单，更易于导航最近的手册，但描述了我们将在6.828中使用的所有x86处理器功能; 以及来自英特尔的完整，最新和最好的 IA-32英特尔架构软件开发人员手册，涵盖了我们在课堂上不需要的最新处理器的所有功能，但您可能有兴趣了解这些功能。AMD提供了一套等效（通常更友好）的手册 。保存Intel / AMD体系结构手册以供日后使用，或者在您想要查找特定处理器功能或指令的明确说明时将其用作参考。
+当然，x86汇编语言编程的权威参考是英特尔的指令集架构参考，您可以在6.828参考页面上找到两种版本：旧版[  80386 Programmer's Reference Manual ](https://pdos.csail.mit.edu/6.828/2018/readings/i386/toc.htm)，比起最新版它要更简单，更易于查找，而且描述了我们将在6.828中使用的所有x86处理器功能; 以及来自英特尔的完整，最新和最好的 IA-32英特尔架构软件开发人员手册，涵盖了我们在课堂上不需要的最新处理器的所有功能，但您可能有兴趣了解这些功能。AMD提供了同样的一套（通常更友好）手册 。保存Intel / AMD体系结构手册以供日后使用，或者在您想要查找特定处理器功能或指令的具体的解释时将其用作参考。
 
 #### 模拟x86
 
