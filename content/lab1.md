@@ -7,7 +7,7 @@
 
 ### 软件设置
 
-本课程中此实验作业和后续实验作业所需的文件将使用Git 版本控制系统进行分发。要了解有关Git的更多信息，请查看 Git用户手册，或者，如果您已熟悉其他版本控制系统，那么这本[CS-oriented overview of Git](https://eagain.net/articles/git-for-computer-scientists/)可能会有用。
+本课程中此实验作业和后续实验作业所需的文件将使用Git 版本控制系统进行分发。要了解有关Git的更多信息，请查看  [Git user's manual](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/user-manual.html)，或者，如果您已熟悉其他版本控制系统，那么这本[CS-oriented overview of Git](https://eagain.net/articles/git-for-computer-scientists/)可能会有用。
 
 这个课程Git存储库的URL是 <https://pdos.csail.mit.edu/6.828/2018/jos.git> 。要在Athena帐户中安装文件，您需要通过运行以下命令来克隆课程存储库。你必须使用基于x86架构的Athena机器; 也就是说，执行`uname -a`应该出现i386 GNU / Linux或i686 GNU / Linux或 x86_64 GNU / Linux。您可以使用`ssh -X athena.dialup.mit.edu`登录公共Athena主机。
 
