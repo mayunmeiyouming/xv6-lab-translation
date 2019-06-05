@@ -62,10 +62,9 @@ Untracked files will not be handed in. Continue？[Y / N]
 注意：不幸的是，本书中的示例是为NASM汇编程序编写的，而我们将使用GNU汇编程序。NASM使用的是Intel语法，而GNU使用AT＆T语法。虽然在语义上是等效的，但是程序文件会有很大不同，至少表面上看，这取决于使用的语法。幸运的是，两者之间的转换非常简单，并且在[ Brennan's Guide to Inline Assembly ](http://www.delorie.com/djgpp/doc/brennan/brennan_att_inline_djgpp.html)中有所介绍。
 
 <table><tr><td>
-练习1. 熟悉6.828参考页面上提供的汇编语言材料 。您现在不必阅读它们，
-但在阅读和编写x86程序集时，您几乎肯定会想要参考这些材料。
+练习1. 熟悉6.828参考页面上提供的汇编语言材料 。现在不必阅读它们，但在阅读和编写x86汇编程序时，肯定会要参考这些材料。
 
-我们建议您阅读Brennan的内联汇编指南中的 “语法”部分 。它给出了我们将在JOS中使用GNU汇编程序的AT＆T汇编语法的一个很好的（并且非常简短）描述。
+我们建议您阅读[ Brennan's Guide to Inline Assembly ](http://www.delorie.com/djgpp/doc/brennan/brennan_att_inline_djgpp.html)中的 “The Syntax”部分 。它有很好的描述（并且非常简短）在JOS中的GNU汇编程序使用的AT＆T汇编语法。
 </td></tr></table>
 
 当然，x86汇编语言编程的权威参考是英特尔的指令集架构参考，您可以在6.828参考页面上找到 两种版本：旧版80386程序员参考手册的HTML版本 ，它比更多更简单，更易于导航最近的手册，但描述了我们将在6.828中使用的所有x86处理器功能; 以及来自英特尔的完整，最新和最好的 IA-32英特尔架构软件开发人员手册，涵盖了我们在课堂上不需要的最新处理器的所有功能，但您可能有兴趣了解这些功能。AMD提供了一套等效（通常更友好）的手册 。保存Intel / AMD体系结构手册以供日后使用，或者在您想要查找特定处理器功能或指令的明确说明时将其用作参考。
