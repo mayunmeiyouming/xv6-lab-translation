@@ -7,7 +7,7 @@
 
 ### 软件设置
 
-本课程中此实验作业和后续实验作业所需的文件将使用Git 版本控制系统进行分发。要了解有关Git的更多信息，请查看  [Git user's manual](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/user-manual.html)，或者，如果您已熟悉其他版本控制系统，那么这本[CS-oriented overview of Git](https://eagain.net/articles/git-for-computer-scientists/)可能会有用。
+本课程中此实验作业和后续实验作业所需的文件将使用Git 版本控制系统进行分发。要了解有关Git的更多信息，请查看  [ Git user's manual ](https://mirrors.edge.kernel.org/pub/software/scm/git/docs/user-manual.html)，或者，如果您已熟悉其他版本控制系统，那么这本[ CS-oriented overview of Git ](https://eagain.net/articles/git-for-computer-scientists/)可能会有用。
 
 这个课程Git存储库的URL是 <https://pdos.csail.mit.edu/6.828/2018/jos.git> 。要在Athena帐户中安装文件，您需要通过运行以下命令来克隆课程存储库。你必须使用基于x86架构的Athena机器; 也就是说，执行`uname -a`应该出现i386 GNU / Linux或i686 GNU / Linux或 x86_64 GNU / Linux。您可以使用`ssh -X athena.dialup.mit.edu`登录公共Athena主机。
 
@@ -21,7 +21,7 @@ Git允许您查看您对代码的改动。例如，如果您已完成其中一�
 
 我们在Athena为您设置了适当的编译器和模拟器。要使用它们，请运行`add -f 6.828`。每次登录时都必须运行此命令（或将其添加到 〜/ .environment文件中）。如果在编译或运行qemu时遇到未知错误，请仔细检查是否添加了课程锁定器。
 
-如果您正在使用非Athena机器，则需要按照[工具页面](https://pdos.csail.mit.edu/6.828/2018/tools.html)上的说明安装 qemu和gcc。我们已经对qemu进行了一些有用的调试更改，一些后来的实验依赖于这些补丁，因此您必须构建自己的补丁。如果你的机器采用的是原生ELF工具链（如Linux和BSD最多的，但值得注意的是不是 OS X），你可以简单地使用你的包管理器安装 GCC。否则，请按照工具页面上的说明进行操作。
+如果您正在使用非Athena机器，则需要按照[ 工具页面 ](https://pdos.csail.mit.edu/6.828/2018/tools.html)上的说明安装 qemu和gcc。我们已经对qemu进行了一些有用的调试更改，一些后来的实验依赖于这些补丁，因此您必须构建自己的补丁。如果你的机器采用的是原生ELF工具链（如Linux和BSD最多的，但值得注意的是不是 OS X），你可以简单地使用你的包管理器安装 GCC。否则，请按照工具页面上的说明进行操作。
 
 ### 交作业流程
 
