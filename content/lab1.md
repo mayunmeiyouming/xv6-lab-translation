@@ -143,9 +143,9 @@ Untracked files will not be handed in. Continue？[Y / N]
 
 0xffff0是BIOS结束前的16个字节（0x100000）。因此，我们不应该感到惊讶的是，BIOS所做的第一件事是jmp跳回到BIOS的前面的位置; 毕竟只有16个字节，能完成多少？
 
-<table><tr><td>
+```
 练习2. 使用GDB的`si`（步骤指令）命令跟踪ROM BIOS以获取更多指令，并尝试猜测它可能正在做什么。您可能需要查看 [ Phil Storrs I/O Ports Description](http://web.archive.org/web/20040404164813/members.iweb.net.au/~pstorr/pcbook/book2/book2.htm)以及[ 6.828 reference materials page](https://pdos.csail.mit.edu/6.828/2018/reference.html) 。无需弄清楚所有细节 - 只是首先了解BIOS的主要内容。
-</td></tr></table>
+```
 
 当BIOS运行时，它会设置一个中断描述符表并初始化各种设备，如VGA显示器。这是您在QEMU窗口中看到的“ Starting SeaBIOS ”消息的来源。
 
