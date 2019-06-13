@@ -119,7 +119,7 @@ Untracked files will not be handed in. Continue？[Y / N]
 
 ![](../pic/lab1-10.png)
 
-我们提供了一个.gdbinit文件，用于设置GDB以调试早期启动期间使用的16位的代码，使其侦听QEMU。（如果它不工作，你可能需要添加一个`add-auto-load-safe-path`到你的home目录的.gdbinit文件中，引导GDB处理我们提供的.gdbinit。 GDB会告诉你是否要做这个。）
+我们提供了一个.gdbinit文件，用于设置GDB以调试早期启动期间使用的16位的代码，使其侦听QEMU。（如果它不工作，你可能需要添加一个`add-auto-load-safe-path`到你的`home`目录下的`.gdbinit`文件中，引导GDB处理我们提供的`.gdbinit`。 GDB会告诉你是否要做这个。）
 
 以下行：
 
@@ -129,11 +129,11 @@ Untracked files will not be handed in. Continue？[Y / N]
 
 + IBM PC开始在物理地址0x000ffff0处执行，该地址位于为ROM BIOS保留的64KB区域的最顶端。
 + PC开始执行CS = 0xf000和IP = 0xfff0。
-+ 要执行的第一条指令是jmp指令，它跳转到分段地址 CS = 0xf000和IP = 0xe05b。
++ 要执行的第一条指令是jmp指令，它跳转到分段地址为 CS = 0xf000和IP = 0xe05b。
 
-为什么QEMU会这样开始？这就是英特尔如何设计IBM在其原始PC中使用的8088处理器。由于PC中的BIOS与物理地址范围0x000f0000-0x000fffff“硬连线”，因此该设计可确保BIOS在上电或任何系统重启后始终首先控制机器 - 这对于电源而言至关重要 - 那里是没有其他的软件在机器的RAM的任何地方，该处理器可以执行。QEMU仿真器带有自己的BIOS，它放置在处理器的模拟物理地址空间中的这个位置。在处理器复位时，（模拟）处理器进入实模式并将CS设置为0xf000，将IP设置为0xfff0，以便从该（CS：IP）段地址开始执行。分段地址0xf000如何：
+为什么QEMU会这样开始？这就是英特尔如何设计在IBM的原始PC中使用的8088处理器。由于PC中的BIOS与物理地址范围0x000f0000-0x000fffff“硬连线”，因此该设计可确保BIOS在任何系统启动或重启后始终第一个控制机器 - 这对于电源而言至关重要 - 在机器的RAM的任何地方，没有该处理器可以执行的其他的软件。QEMU模拟器带有自己的BIOS，它放置在处理器的模拟物理地址空间中。在处理器复位时，（模拟）处理器进入实模式并将CS设置为0xf000，将IP设置为0xfff0，以便从该（CS：IP）段地址开始执行。分段地址0xf000:fff0是如何转换成物理地址呢？
 
-要回答这个问题，我们需要了解一下实模式寻址。在实模式（PC启动的模式）中，地址转换根据以下公式工作： 物理地址 = 16 * 段 + 偏移。因此，当PC将CS设置为0xf000且IP设置为0xfff0时，引用的物理地址为：
+要回答这个问题，我们需要了解一下实模式寻址。在实模式（PC启动的模式）中，地址转换根据以下公式： 物理地址 = 16 * 段 + 偏移。因此，当PC将CS设置为0xf000且IP设置为0xfff0时，引用的物理地址为：
 
 ```
    16×0xf000 + 0xfff0＃十六进制乘以16是
@@ -141,10 +141,10 @@ Untracked files will not be handed in. Continue？[Y / N]
    = 0xffff0 
 ```
 
-0xffff0是BIOS结束前的16个字节（0x100000）。因此，我们不应该感到惊讶的是，BIOS所做的第一件事是jmp倒退到BIOS的早期位置; 毕竟它只能在16个字节内完成多少？
+0xffff0是BIOS结束前的16个字节（0x100000）。因此，我们不应该感到惊讶的是，BIOS所做的第一件事是jmp跳回到BIOS的前面的位置; 毕竟只有16个字节，能完成多少？
 
 <table><tr><td>
-练习2. 使用GDB si（步骤指令）命令跟踪ROM BIOS以获取更多指令，并尝试猜测它可能正在做什么。您可能需要查看 Phil Storrs I / O端口说明以及6.828参考资料页面上的其他材料 。无需弄清楚所有细节 - 只是首先了解BIOS的主要内容。
+练习2. 使用GDB的`si`（步骤指令）命令跟踪ROM BIOS以获取更多指令，并尝试猜测它可能正在做什么。您可能需要查看 [ Phil Storrs I/O Ports Description](http://web.archive.org/web/20040404164813/members.iweb.net.au/~pstorr/pcbook/book2/book2.htm)以及[ 6.828 reference materials page](https://pdos.csail.mit.edu/6.828/2018/reference.html) 。无需弄清楚所有细节 - 只是首先了解BIOS的主要内容。
 </td></tr></table>
 
 当BIOS运行时，它会设置一个中断描述符表并初始化各种设备，如VGA显示器。这是您在QEMU窗口中看到的“ Starting SeaBIOS ”消息的来源。
